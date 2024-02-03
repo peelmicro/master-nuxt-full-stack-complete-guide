@@ -1396,4 +1396,161 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 - We can create a `.gitignore` file to avoid adding some files to our Git repository.
 - We can copy it from [Nuxt .gitignore](https://nuxt.com/docs/guide/directory-structure/gitignore).
-- 
+
+> .gitignore
+
+```git
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+
+# Local env files
+.env
+.env.*
+!.env.example
+```
+
+### 3.4 Adding the project to GitHub
+
+- We can create a new repository in GitHub.
+- We can add the remote repository to our project.
+
+```bash
+uanpabloperez@jpp-PROX15-AMD:~/Work/Projects/EdiEz/Examples/nuxt3-ts-portfolio$ git remote add origin https://github.com/peelmicro/master-nuxt-full-stack-complete-guide.git
+```
+
+- We can commit the changes to our project.
+
+```bash
+juanpabloperez@jpp-PROX15-AMD:~/Work/Projects/EdiEz/Examples/nuxt3-ts-portfolio$ git commit -m "Initial Commit"
+[main (root-commit) efcc8c3] Initial Commit
+ 44 files changed, 2130 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .vscode/settings.json
+ create mode 100644 README.md
+ create mode 100644 app.vue
+ create mode 100644 app/router.options.js
+ create mode 100755 bun.lockb
+ create mode 100644 components/color-mode-selector.vue
+ create mode 100644 components/content/blog-posts.vue
+ create mode 100644 components/content/latest-blog-posts.vue
+ create mode 100644 components/content/project-list.vue
+ create mode 100644 components/content/toc-links.vue
+ create mode 100644 components/menu.vue
+ create mode 100644 content/about.md
+ create mode 100644 content/blog/2024/first.md
+ create mode 100644 content/blog/first.md
+ create mode 100644 content/blog/index.md
+ create mode 100644 content/blog/vue-introduction.md
+ create mode 100644 content/index.md
+ create mode 100644 content/projects.md
+ create mode 100644 docs/nuxt3-ts-portfolio.001.png
+ create mode 100644 docs/nuxt3-ts-portfolio.002.png
+ create mode 100644 docs/nuxt3-ts-portfolio.003.png
+ create mode 100644 docs/nuxt3-ts-portfolio.004.png
+ create mode 100644 docs/nuxt3-ts-portfolio.005.png
+ create mode 100644 docs/nuxt3-ts-portfolio.006.png
+ create mode 100644 docs/nuxt3-ts-portfolio.007.png
+ create mode 100644 docs/nuxt3-ts-portfolio.008.png
+ create mode 100644 docs/nuxt3-ts-portfolio.009.png
+ create mode 100644 docs/nuxt3-ts-portfolio.md
+ create mode 100644 error.vue
+ create mode 100644 layouts/another.vue
+ create mode 100644 layouts/default.vue
+ create mode 100644 nuxt.config.ts
+ create mode 100644 package.json
+ create mode 100644 pages/about.vue
+ create mode 100644 pages/blog/[...slug].vue
+ create mode 100644 pages/index.vue
+ create mode 100644 pages/projects.vue
+ create mode 100644 public/favicon.ico
+ create mode 100644 public/images/vue-logo.png
+ create mode 100644 server/routes/sitemap.xml.js
+ create mode 100644 server/tsconfig.json
+ create mode 100644 tailwind.config.js
+ create mode 100644 tsconfig.json
+```
+
+- We can push the changes to the remote repository.
+
+```bash
+uanpabloperez@jpp-PROX15-AMD:~/Work/Projects/EdiEz/Examples/nuxt3-ts-portfolio$ git push -u origin main
+Enumerating objects: 61, done.
+Counting objects: 100% (61/61), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (54/54), done.
+Writing objects: 100% (61/61), 699.21 KiB | 11.28 MiB/s, done.
+Total 61 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/peelmicro/master-nuxt-full-stack-complete-guide.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+```
+
+### 3.5 Deploying our project to Vercel
+
+- We need to sign up or login to [Vercel](https://vercel.com/login) using GitHub.
+
+![Login to Vercel](nuxt3-ts-portfolio.010.png)
+
+- We need to authorize Vercel to access our GitHub account.
+
+![Authorize Vercel](nuxt3-ts-portfolio.011.png)
+
+- Once we are logged in, we can see the list of our repositories in GitHub registered in Vercel.
+
+![Registered Repositories](nuxt3-ts-portfolio.012.png)
+
+- We can add our project to Vercel.
+
+![Add new Project](nuxt3-ts-portfolio.013.png)
+
+- We need to configure the connection between Vercel and our GitHub repository.
+
+![Configure GitHub App](nuxt3-ts-portfolio.014.png)
+
+- Select our account.
+
+![Select our account](nuxt3-ts-portfolio.015.png)
+
+- Select the repository.
+
+![Select the repository](nuxt3-ts-portfolio.016.png)
+
+- Save the connection
+
+![Save the connection](nuxt3-ts-portfolio.017.png)
+
+- Import the project from Vercel.
+
+![Import the project from Vercel](nuxt3-ts-portfolio.018.png)
+
+- Set the deployment settings, like, `nuxt generate` nd `bun install`.
+
+![Set the deployment settings](nuxt3-ts-portfolio.019.png)
+
+- Deploy the project.
+
+![Alt text](nuxt3-ts-portfolio.020.png)
+
+- Ensure that the project has been deployed and click to access it.
+
+![Ensure that the project has been deployed](nuxt3-ts-portfolio.021.png)
+
+- Access it from <https://master-nuxt-full-stack-complete-guide.vercel.app/blog/vue-introduction>
+
+![Access it](nuxt3-ts-portfolio.022.png)
